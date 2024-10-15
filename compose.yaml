@@ -10,11 +10,9 @@ services:
     volumes:
       - ./web:/var/www/html
   db:
-    image: mariadb:latest
+    build: ./mariadb-image
     container_name: mariadb-container
     restart: always
-    environment:
-      - MARIADB_ROOT_PASSWORD=password
     ports:
       - "3306:3306"
 volumes:

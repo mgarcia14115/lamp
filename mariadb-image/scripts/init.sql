@@ -1,0 +1,5 @@
+CREATE USER 'admin'@'%' IDENTIFIED BY 'password';
+
+GRANT ALL PRIVILEGES ON MYDB.* TO 'admin'@'%';
+
+FLUSH PRIVILEGES;
