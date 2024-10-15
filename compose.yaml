@@ -1,0 +1,22 @@
+name: lamp
+
+services:
+  web:
+    build: ./php-image
+    container_name: php-container
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - ./web:/var/www/html
+  db:
+    image: mariadb:latest
+    container_name: mariadb-container
+    restart: always
+    environment:
+      - MARIADB_ROOT_PASSWORD=password
+    ports:
+      - "3306:3306"
+volumes:
+  web:
+    external: true
